@@ -1,0 +1,445 @@
+/* CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+ul, ol {
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-play-state: paused !important;
+    transition: none !important;
+  }
+}  
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
+}
+
+nav {
+    background-color: transparent;
+    padding: 15px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000 !important;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #140d01;
+    line-height: 80.5%;
+    font-weight: 800;
+    letter-spacing: -1.0px;
+}
+
+.logo-container h1 span {
+    color: #ff9900;
+}
+
+nav.scroll {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 74px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 32px;
+    z-index: 1000;
+    transition: padding 0.3s;
+}
+
+.logo {
+    width: 35px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 32px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #140d01;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e68a00;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #e68a00;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: #e68a00;
+    font-weight: bold;
+}
+
+nav ul li a.active::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #e68a00;
+    transition: width 0.3s;
+}
+
+.site-title {
+    .site-title {
+        margin: 0;
+        padding: 0;
+        color: #140d01;
+        margin-left: 10px;
+    }
+}
+
+.banner {
+    position: relative;
+    margin: 16px auto;
+    background-image: url('https://images.unsplash.com/photo-1642055910986-b2a600d336a6?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: calc(100vh - 80px);
+    width: calc(100vw - 140px);
+    border-radius: 30px;
+}
+
+.banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+}
+
+.banner-content h1 {
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    font-size: 77px;
+    font-weight: 800;
+    line-height: 100.5%;
+    letter-spacing: -3.0px;
+    margin-bottom: 28px;
+}
+
+.banner-content p {
+    font-size: 18px;
+    margin-bottom: 48px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #e68a00;
+}
+
+.about-lampung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.about-lampung .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+}
+
+.about-lampung .description {
+    flex-basis: 50%;
+    padding-right: 32px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.about-lampung .description p {
+    margin-top: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.about-lampung .image {
+    flex-basis: 50%;
+    height: 100%;
+    text-align: right;
+    display: flex;
+    align-items: center;
+}
+
+.about-lampung .image img {
+    max-width: 26em;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.tourist-places {
+    padding: 50px 20px;
+    text-align: center;
+    margin: 100px auto;
+    max-width: 1200px;
+}
+
+.place-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.place-card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.place-card:hover {
+    transform: translateY(-8px);
+    cursor: pointer;
+}
+
+.place-card img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.place-card {
+    text-decoration: none;
+}
+
+.place-card h3 {
+    margin-top: 24px;
+}
+
+.place-card h3,
+.place-card p {
+    color: #333;
+}
+
+.place-card h3:hover,
+.place-card p:hover {
+    color: #333;
+}
+
+#map {
+    height: calc(100vh - 80px);
+    width: calc(100vw - 140px);
+    border-radius: 30px;
+    margin: 25px auto;
+}
+
+.maps {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.maps {
+    margin-top: 20px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 8px;
+    text-align: center;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e68a00;
+}
+
+/* CSS untuk page place_detail */
+.breadcrumb {
+    margin: 12px 0;
+    padding: 24px 80px;
+    font-size: 14px;
+    color: #999;
+    border-top: 1px #999 solid;
+    border-bottom: 1px #999 solid;
+}
+
+.breadcrumb a {
+    color: #999;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: #666;
+}
+
+.breadcrumb span {
+    font-weight: bold;
+    color: #333;
+}
+
+.place-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.place-info {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.place-image {
+    width: 600px; 
+    height: 375px; 
+    overflow: hidden; 
+    margin: 32px auto; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.place-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.place-details {
+    text-align: left;
+}
+
+.place-details p {
+    margin-bottom: 10px;
+}
+
+.place-details strong {
+    font-weight: bold;
+}
