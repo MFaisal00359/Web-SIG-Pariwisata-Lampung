@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('place_detail', 'Place::detail');
-$routes->get('explore_place', 'ExplorePage::index'); // Ubah dari Admin ke ExplorePage
+$routes->get('explore_place', 'ExplorePage::index');
 
 $routes->group('admin', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->get('login', 'Auth::showLoginForm', ['as' => 'admin.showLoginForm']);
