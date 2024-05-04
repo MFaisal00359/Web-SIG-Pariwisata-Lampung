@@ -8,6 +8,8 @@ Install Composer
 
 ```
 composer Update
+
+composer install --ignore-platform-reqs (jika error)
 ```
 
 ```
