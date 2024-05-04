@@ -9,7 +9,7 @@ Install Composer
 ```
 composer Update
 
-composer install --ignore-platform-reqs (jika error)
+composer update --ignore-platform-reqs (jika error)
 ```
 
 ```
