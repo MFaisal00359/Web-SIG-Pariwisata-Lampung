@@ -1,0 +1,114 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+    margin: 0;
+}
+
+ul, ol {
+    padding: 0;
+}
+
+nav {
+    background-color: transparent;
+    padding: 15px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000 !important;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    margin-right: 10px;
+}
+
+.logo-container h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #140d01;
+    line-height: 80.5%;
+    font-weight: 800;
+    letter-spacing: -1.0px;
+}
+
+.logo-container h1 span {
+    color: #ff9900;
+}
+
+nav.scroll {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 74px;
+    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    padding: 32px;
+    z-index: 1000;
+    transition: padding 0.3s;
+}
+
+.logo {
+    width: 35px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 32px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #140d01;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #e68a00;
+}
+
+nav ul li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #e68a00;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: #e68a00;
+    font-weight: bold;
+}
+
+nav ul li a.active::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #e68a00;
+    transition: width 0.3s;
+}

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoWisata Lampung</title>
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/nav.css') ?>">
     <link rel="stylesheet" href="<?= base_url('vendor/leaflet/leaflet.css') ?>">
     <link rel="icon" type="image/png" href="logo/favicon.png">
 </head>
@@ -15,9 +16,10 @@
         <div class="banner-content">
             <h1>WELCOME TO GEOWISATA LAMPUNG</h1>
             <p>Discover the beauty of Lampung's geological wonders</p>
-            <a href="#" class="btn">Explore Now</a>
+            <a href="<?= site_url('explore_place'); ?>" class="btn">Explore Now</a>
         </div>
     </section>
+
 
     <section id="about-lampung" class="about-lampung">
         <h2>About Lampung</h2>
