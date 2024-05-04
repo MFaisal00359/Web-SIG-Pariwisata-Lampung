@@ -10,7 +10,7 @@ composer Update
 ```
 
 ```
-php Spark Migrate
+php spark migrate
 ```
 
 ```
