@@ -14,7 +14,7 @@ php spark migrate
 ```
 
 ```
-cp env .env
+php spark db:seed AdminSeeder
 ```
 
 ```
