@@ -2,10 +2,17 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
+use App\Models\UserModel;
 
 class Auth extends BaseController
 {
+    protected $userModel;
+
+    public function __construct()
+    {
+        $this->userModel = new UserModel();
+    }
+
     public function showLoginForm()
     {
         return view('admin/login');
@@ -15,34 +22,38 @@ class Auth extends BaseController
     {
         $request = $this->request;
 
-        // Validasi input
-        $rules = [
-            'username' => 'required',
-            'password' => 'required|min_length[6]'
-        ];
-
-        $errors = [
-            'password' => [
-                'min_length' => 'Password must be at least 6 characters long.'
-            ]
-        ];
-
-        if (!$this->validate($rules, $errors)) {
-            return redirect()->back()->withInput()->with('error', 'Invalid username or password');
-        }
-
-        // Lakukan proses autentikasi
-        // ...
-
-        // Contoh autentikasi sederhana, Anda dapat menyesuaikan dengan kebutuhan Anda
+        // Ambil data input
         $username = $request->getPost('username');
         $password = $request->getPost('password');
 
-        if ($username !== 'admin' || $password !== 'password') {
+        // Validasi input
+        if (empty($username) || empty($password)) {
             return redirect()->back()->withInput()->with('error', 'Invalid username or password');
         }
 
-        // Autentikasi berhasil
-        return redirect()->to('/admin/dashboard');
+        $user = $this->userModel->where('username', $username)->first();
+
+        if ($user) {
+            if (password_verify($password, $user['password'])) {
+                $session = session();
+                $session->set('isLoggedIn', true);
+                $session->set('userData', $user);
+
+                return redirect()->to('/admin/dashboard');
+            } else {
+                return redirect()->back()->withInput()->with('error', 'Invalid password');
+            }
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Invalid username');
+        }
+    }
+
+    public function logout()
+    {
+        $session = session();
+        $session->remove('isLoggedIn');
+        $session->remove('userData');
+
+        return redirect()->to('/admin/login')->with('success', 'You have been logged out');
     }
 }

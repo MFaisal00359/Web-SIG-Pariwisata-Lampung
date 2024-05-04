@@ -15,6 +15,7 @@
             <div class="error-message"><?= session()->getFlashdata('error') ?></div>
         <?php endif; ?>
         <form action="<?= route_to('admin.authenticate') ?>" method="POST">
+            <?= csrf_field() ?>
             <div class="input-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required>

@@ -15,7 +15,8 @@ class AdminSeeder extends Seeder
                 'email'    => 'admin@example.com',
             ],
         ];
-        
-        $this->db->table('users')->insertBatch($data);
+
+        $userModel = new \App\Models\UserModel();
+        $userModel->insertBatch($data);
     }
 }

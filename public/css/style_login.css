@@ -9,6 +9,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: 'Inter', sans-serif;
     height: 100vh;
     margin: 0;
     display: flex;

@@ -39,11 +39,11 @@
 
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <hr class="sidebar-divider">
-                    <div class="sidebar-heading">
-                        Form Data
-                </div>  
+                <div class="sidebar-heading">
+                    Form Data
+                </div>
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Upload Place</span>
@@ -52,8 +52,8 @@
                 <hr class="sidebar-divider">
                 <div class="sidebar-heading">
                     Interface
-                </div>  
-                <a class="nav-link" href="<?= route_to('admin.place_data') ?>"">
+                </div>
+                <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Place's Data</span>
                 </a>
@@ -82,7 +82,7 @@
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-md-inline justify-content-center">
-                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
         </ul>
@@ -142,18 +142,18 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Place's Data</h1>
                     </div>
                     <!-- Content Row -->
 
                     <div class="row">
-                        <!-- Area Upload Place-->
-                        <div class="col-xl-8 col-lg-7">
+                        <!-- Area Place's Data -->
+                        <div class="col-xl-12 col-lg-7">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Upload Place Overview</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Place's Data Overview</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -171,48 +171,25 @@
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <!-- Form Upload Place -->
-                                    <form>
-                                        <!-- Nama objek wisata -->
-                                        <div class="form-group">
-                                            <label for="namaObjek">Nama Objek Wisata</label>
-                                            <input type="text" class="form-control" id="namaObjek" name="namaObjek" placeholder="Masukkan Nama Objek Wisata">
-                                        </div>
-
-                                        <!-- Jenis objek -->
-                                        <div class="form-group">
-                                            <label for="jenisObjek">Jenis Objek</label>
-                                            <select class="form-control" id="jenisObjek" name="jenisObjek">
-                                                <option value="alam">Wisata Alam</option>
-                                                <option value="budaya">Wisata Budaya</option>
-                                                <option value="sejarah">Wisata Sejarah</option>
-                                                <!-- Tambahkan opsi lain sesuai kebutuhan -->
-                                            </select>
-                                        </div>
-
-                                        <!-- Koordinat lokasi -->
-                                        <div class="form-group">
-                                            <label for="koordinat">Koordinat Lokasi</label>
-                                            <input type="text" class="form-control" id="koordinat" name="koordinat" placeholder="Masukkan Koordinat Lokasi">
-                                        </div>
-
-                                        <!-- Alamat lengkap -->
-                                        <div class="form-group">
-                                            <label for="alamat">Alamat Lengkap</label>
-                                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Masukkan Alamat Lengkap">
-                                        </div>
-
-                                        <!-- Deskripsi -->
-                                        <div class="form-group">
-                                            <label for="deskripsi">Deskripsi</label>
-                                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="3" placeholder="Masukkan Deskripsi Objek Wisata"></textarea>
-                                        </div>
-
-                                        <!-- Tombol Submit -->
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                    </form>
+                                    <!-- Place's Data Table -->
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nama Objek Wisata</th>
+                                                    <th>Jenis Objek</th>
+                                                    <th>Koordinat Lokasi</th>
+                                                    <th>Alamat Lengkap</th>
+                                                    <th>Deskripsi</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Data Place's Rows -->
+                                                <!-- Isi data tabel di sini -->
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>

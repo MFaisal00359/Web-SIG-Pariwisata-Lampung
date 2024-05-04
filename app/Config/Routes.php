@@ -11,11 +11,7 @@ $routes->get('place_detail', 'Place::detail');
 $routes->group('admin', ['namespace' => 'App\Controllers'], function ($routes) {
     $routes->get('login', 'Auth::showLoginForm', ['as' => 'admin.showLoginForm']);
     $routes->post('login', 'Auth::authenticate', ['as' => 'admin.authenticate']);
-});
-
-// Config/Routes.php
-$routes->group('admin', ['namespace' => 'App\Controllers'], function ($routes) {
-    $routes->get('login', 'Auth::showLoginForm', ['as' => 'admin.showLoginForm']);
-    $routes->post('login', 'Auth::authenticate', ['as' => 'admin.authenticate']);
     $routes->get('dashboard', 'Admin::dashboard', ['as' => 'admin.dashboard']);
+    $routes->get('place-data', 'Admin::place_data', ['as' => 'admin.place_data']);
+    $routes->get('logout', 'Auth::logout', ['as' => 'admin.logout']);
 });
