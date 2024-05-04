@@ -1,14 +1,16 @@
 # Geo-Wisata-Lampung
 ## website sistem informasi geografis pariwisata di provinsi lampung
 
-##Tutorial menjalankan proyek
+## Tutorial menjalankan proyek
 ```
 Install Composer
 ```
 
 ```
 composer Update
-
+```
+atau
+```
 composer update --ignore-platform-reqs (jika error)
 ```
 
