@@ -1,7 +1,30 @@
 # Geo-Wisata-Lampung
-website sistem informasi geografis pariwisata di provinsi lampung
+## website sistem informasi geografis pariwisata di provinsi lampung
 
-# CodeIgniter 4 Application Starter
+## Tutorial menjalankan proyek
+```
+Install Composer
+```
+
+```
+composer Update
+```
+atau
+```
+composer update --ignore-platform-reqs (jika error)
+```
+
+```
+php spark migrate
+```
+
+```
+php spark db:seed AdminSeeder
+```
+
+```
+php spark serve
+```
 
 ## What is CodeIgniter?
 
