@@ -10,13 +10,13 @@ class AdminSeeder extends Seeder
     {
         $data = [
             [
-                'username' => 'admin',
-                'password' => password_hash('admin123', PASSWORD_DEFAULT),
-                'email'    => 'admin@example.com',
+                'username' => 'adminUser',
+                'password' => password_hash('admin123_login', PASSWORD_BCRYPT),
+                'email'    => 'adminUser@example.com',
             ],
         ];
 
-        $userModel = new \App\Models\UserModel();
-        $userModel->insertBatch($data);
+        // Masukkan data ke dalam tabel admin
+        $this->db->table('admin')->insertBatch($data);
     }
 }

@@ -1,33 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <link rel="stylesheet" href="<?= base_url('css/style_login.css'); ?>">
+    <link rel="stylesheet" href="<?= base_url('css/style-login.css') ?>">
 </head>
-
 <body>
     <div class="login-container">
-        <h2>Admin Login</h2>
-        <?php if (session()->getFlashdata('error')) : ?>
-            <div class="error-message"><?= session()->getFlashdata('error') ?></div>
+        <h2>Login</h2>
+        <?php if (session()->getFlashdata('msg')) : ?>
+            <div class="alert alert-danger"><?= session()->getFlashdata('msg') ?></div>
         <?php endif; ?>
-        <form action="<?= route_to('admin.authenticate') ?>" method="POST">
+        <form action="<?= site_url('admin/loginAuth') ?>" method="post">
             <?= csrf_field() ?>
-            <div class="input-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" class="form-control" required>
             </div>
-            <div class="input-group">
+            <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" name="password" class="form-control" required>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" class="btn">Login</button>
         </form>
-        <a href="<?= base_url('/') ?>" class="back-btn">Back to Home</a>
     </div>
 </body>
-
 </html>
