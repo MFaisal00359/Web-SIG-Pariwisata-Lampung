@@ -66,6 +66,11 @@
                     <h3>Tourist Place 6</h3>
                     <p>Description of Tourist Place 6</p>
                 </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 6">
+                    <h3>Tourist Place 6</h3>
+                    <p>Description of Tourist Place 6</p>
+                </a>
             </div>
     </section>
 
