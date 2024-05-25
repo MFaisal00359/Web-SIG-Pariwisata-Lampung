@@ -55,5 +55,6 @@ Copy `env` to `.env` and tailor for your app, specifically the baseURL
 and any database settings.
 
 =======
+|
 
-thank you
+*thank you*
