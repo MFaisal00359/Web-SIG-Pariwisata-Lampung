@@ -10,7 +10,7 @@ class HomeController extends BaseController
     {
         $model = new PlaceModel();
         $data = [
-            'places' => $model->paginate(6), // Menggunakan pagination
+            'places' => $model->paginate(6),
             'pager' => $model->pager
         ];
         echo view('welcome_page', $data);
