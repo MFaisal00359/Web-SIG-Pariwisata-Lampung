@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explore Place</title>
-    <link rel="stylesheet" href="<?= base_url('vendor/leaflet/leaflet.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('sleaflet/leaflet.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/nav.css') ?>">
     <link rel="icon" type="image/png" href="<?= base_url('logo/favicon.png') ?>">
     <style>
@@ -22,7 +22,7 @@
         }
         #search-container {
             position: absolute;
-            top: 95px;
+            top: 25px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -86,7 +86,6 @@
     </style>
 </head>
 <body>
-    <?php include(APPPATH . 'Views/templates/header.php'); ?> 
 
     <div id="search-container">
         <input type="text" id="search" placeholder="Search for places">
@@ -95,7 +94,7 @@
 
     <div id="map"></div>
 
-    <script src="<?= base_url('vendor/leaflet/leaflet.js') ?>"></script>
+    <script src="<?= base_url('leaflet/leaflet.js') ?>"></script>
     <script>
         var map = L.map('map').setView([-4.9180, 105.1997], 8); // zoom 8
 

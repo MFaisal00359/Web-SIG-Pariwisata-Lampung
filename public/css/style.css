@@ -16,7 +16,6 @@ body {
     scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
-    
 }
 
 html {
@@ -54,24 +53,22 @@ body {
 }
 
 .site-title {
-    .site-title {
-        margin: 0;
-        padding: 0;
-        color: #140d01;
-        margin-left: 10px;
-    }
+    margin: 0;
+    padding: 0;
+    color: #140d01;
+    margin-left: 10px;
 }
 
+/* Banner Section */
 .banner {
     position: relative;
-    margin: 16px auto;
+    margin: 0 auto;
     background-image: url('https://images.unsplash.com/photo-1642055910986-b2a600d336a6?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: calc(100vh - 80px);
-    width: calc(100vw - 140px);
-    border-radius: 30px;
+    height: 100vh;
+    width: 100%;
 }
 
 .banner::after {
@@ -82,7 +79,6 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 30px;
 }
 
 .banner-content {
@@ -116,53 +112,46 @@ body {
     background-color: #ff9900;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 50px; /* Make button radius round */
 }
 
 .btn:hover {
     background-color: #e68a00;
 }
 
+/* About Lampung Section */
 .about-lampung {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin: 100px auto;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #f8f8f8;
 }
 
-h2 {
+.about-lampung .content {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-lampung .description {
+    flex: 1 1 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.about-lampung h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
     margin-bottom: 30px;
-    text-align: center;
     color: #333;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.about-lampung .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 30px;
-}
-
-.about-lampung .description {
-    flex-basis: 50%;
-    padding-right: 32px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
-}
-
-.about-lampung .description p {
-    margin-top: 0;
+.about-lampung p {
     font-size: 18px;
     line-height: 1.6;
     color: #333;
@@ -170,25 +159,32 @@ h2 {
 }
 
 .about-lampung .image {
-    flex-basis: 50%;
-    height: 100%;
-    text-align: right;
-    display: flex;
-    align-items: center;
+    flex: 1 1 50%;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .about-lampung .image img {
-    max-width: 26em;
-    height: 100%;
-    object-fit: cover;
+    width: 100%;
     border-radius: 10px;
 }
 
+/* Tourist Places Section */
 .tourist-places {
     padding: 50px 20px;
     text-align: center;
     margin: 100px auto;
     max-width: 1200px;
+}
+
+.tourist-places h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
 .place-container {
@@ -199,144 +195,99 @@ h2 {
 }
 
 .place-card {
-    background-color: #f9f9f9;
+    background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
-    margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.place-card:hover {
-    transform: translateY(-8px);
-    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .place-card img {
-    width: 300px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 8px;
 }
 
-.place-card {
-    text-decoration: none;
+.place-card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .place-card h3 {
-    margin-top: 24px;
+    font-size: 24px;
+    margin: 10px 0;
 }
 
-.place-card h3,
-.place-card p {
-    color: #333;
+.no-places {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.place-card h3:hover,
-.place-card p:hover {
-    color: #333;
+.no-places img {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
 }
 
-#map {
-    height: calc(100vh - 80px);
-    width: calc(100vw - 140px);
-    border-radius: 30px;
-    margin: 25px auto;
-}
-
-.maps {
-    margin-top: 100px;
-    text-align: center;
-}
-
-.maps {
+.pagination {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
-    margin-bottom: 0;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 10px 20px;
+    background-color: #ff9900;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.pagination a:hover {
+    background-color: #e68a00;
+}
+
+/* Maps Section */
+.maps {
+    padding: 50px 20px;
     text-align: center;
 }
 
+.maps h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.map {
+    height: 500px;
+    width: 100%;
+}
+
+/* Footer */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 8px;
     text-align: center;
-    width: 100%;
-    bottom: 0;
-    z-index: 1000;
-    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
-    margin-top: 0;
-    display: flex;
-    justify-content: center;
+    padding: 20px;
 }
 
 footer a {
-    color: #fff;
+    color: #ff9900;
     text-decoration: none;
-    margin: 0 15px;
-    transition: color 0.3s;
 }
 
 footer a:hover {
     color: #e68a00;
 }
 
-/* CSS untuk page place_detail */
-.breadcrumb {
-    margin: 12px 0;
-    padding: 24px 80px;
-    font-size: 14px;
-    color: #999;
-    border-top: 1px #999 solid;
-    border-bottom: 1px #999 solid;
-}
-
-.breadcrumb a {
-    color: #999;
-    text-decoration: none;
-}
-
-.breadcrumb a:hover {
-    color: #666;
-}
-
-.breadcrumb span {
-    font-weight: bold;
-    color: #333;
-}
-
-.place-detail {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.place-info {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.place-image {
-    width: 600px; 
-    height: 375px; 
-    overflow: hidden; 
-    margin: 32px auto; 
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-}
-
-.place-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.place-details {
-    text-align: left;
-}
-
-.place-details p {
-    margin-bottom: 10px;
-}
-
-.place-details strong {
-    font-weight: bold;
-}

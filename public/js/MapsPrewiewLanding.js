@@ -1,19 +1,14 @@
-// Inisialisasi peta dengan satu objek mapView
-var mapView = L.map('map').setView([-5.677747221170379, 105.51610569011895], 10); 
+var map = L.map('map', {
+    dragging: false, // Menonaktifkan drag
+    tap: false // Menonaktifkan touch
+}).setView([0, 0], 2); // Sesuaikan koordinat dan zoom level sesuai kebutuhan Anda
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(mapView);
+    attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
 
-var locations = [
-    {coords: [-5.41835532956698, 105.31120249660316], message: 'Bukit Aslan'},
-    {coords: [-5.741278711725356, 105.6556167394477], message: 'Way Tebing Cepa'},
-    {coords: [-5.677747221170379, 105.51610569011895], message: 'Pantai Marina Lampung Selatan'}
-];
-
-locations.forEach(function(location) {
-    var popup = L.popup().setContent(location.message); // Tetapkan pesan popup ke objek popup
-    L.marker(location.coords).addTo(mapView)
-        .bindPopup(popup) // Gunakan objek popup yang telah ditetapkan
-        .openPopup();
+// Mengaktifkan kembali drag saat pengguna mengklik peta
+map.on('click', function() {
+    map.dragging.enable();
+    map.tap.enable();
 });
