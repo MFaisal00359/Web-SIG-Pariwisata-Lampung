@@ -20,7 +20,6 @@
         </div>
     </section>
 
-
     <section id="about-lampung" class="about-lampung">
         <h2>About Lampung</h2>
         <div class="content">
@@ -35,38 +34,25 @@
 
     <section id="tourist-places" class="tourist-places">
         <h2>List Place</h2>
-            <div class="place-container">
-                <a href="<?= site_url('place_detail'); ?>" class="place-card">
-                    <img src="https://via.placeholder.com/300" alt="Tourist Place 1">
-                    <h3>Tourist Place 1</h3>
-                    <p>Description of Tourist Place 1</p>
-                </a>
-                <a href="<?= site_url('place_detail'); ?>" class="place-card">
-                    <img src="https://via.placeholder.com/300" alt="Tourist Place 2">
-                    <h3>Tourist Place 2</h3>
-                    <p>Description of Tourist Place 2</p>
-                </a>
-                <a href="<?= site_url('place_detail'); ?>" class="place-card">
-                    <img src="https://via.placeholder.com/300" alt="Tourist Place 3">
-                    <h3>Tourist Place 3</h3>
-                    <p>Description of Tourist Place 3</p>
-                </a>
-                <a href="<?= site_url('place_detail'); ?>" class="place-card">
-                    <img src="https://via.placeholder.com/300" alt="Tourist Place 4">
-                    <h3>Tourist Place 4</h3>
-                    <p>Description of Tourist Place 4</p>
-                </a>
-                <a href="<?= site_url('place_detail'); ?>" class="place-card">
-                    <img src="https://via.placeholder.com/300" alt="Tourist Place 5">
-                    <h3>Tourist Place 5</h3>
-                    <p>Description of Tourist Place 5</p>
-                </a>
-                <a href="<?= site_url('place_detail'); ?>" class="place-card">
-                    <img src="https://via.placeholder.com/300" alt="Tourist Place 6">
-                    <h3>Tourist Place 6</h3>
-                    <p>Description of Tourist Place 6</p>
-                </a>
+        <?php if (empty($places)): ?>
+            <div class="no-places">
+                <img src="<?= base_url('images/nothing_places.png') ?>" alt="No Places">
+                <p>No places found.</p>
             </div>
+        <?php else: ?>
+            <div class="place-container">
+                <?php foreach ($places as $place) : ?>
+                    <div class="place-card">
+                        <img src="<?= base_url('uploads/' . $place['photo']) ?>" alt="<?= $place['name'] ?>">
+                        <h3><?= $place['name'] ?></h3>
+                        <a href="<?= site_url('place_detail/' . $place['id']) ?>" class="btn">Detail</a>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <div class="pagination">
+                <?= $pager->links() ?>
+            </div>
+        <?php endif; ?>
     </section>
 
     <section id="maps" class="maps">

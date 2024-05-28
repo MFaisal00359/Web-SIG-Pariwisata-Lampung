@@ -5,9 +5,12 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
-$routes->get('place_detail', 'Place::detail');
-$routes->get('explore_place', 'ExplorePage::index');
+// $routes->get('/', 'Home::index');
+// $routes->get('place_detail', 'Place::detail');
+$routes->get('explore_place', 'HomeController::explorePlace');
+
+$routes->get('/', 'HomeController::index');
+$routes->get('place_detail/(:num)', 'HomeController::placeDetail/$1');
 
 $routes->get('admin', 'AdminController::login');
 $routes->post('admin/loginAuth', 'AdminController::loginAuth');

@@ -89,7 +89,7 @@ class AdminController extends BaseController
         $model = new PlaceModel();
         $photo = $this->request->getFile('photo');
         $photoName = $photo->getRandomName();
-        $photo->move(WRITEPATH . 'uploads', $photoName);
+        $photo->move(ROOTPATH . 'public/uploads', $photoName); 
 
         $data = [
             'name' => $this->request->getPost('name'),
@@ -136,7 +136,7 @@ class AdminController extends BaseController
         $photo = $this->request->getFile('photo');
         if ($photo && $photo->isValid() && !$photo->hasMoved()) {
             $photoName = $photo->getRandomName();
-            $photo->move(WRITEPATH . 'uploads', $photoName);
+            $photo->move(ROOTPATH . 'public/uploads', $photoName); 
         } else {
             $photoName = $this->request->getPost('old_photo');
         }

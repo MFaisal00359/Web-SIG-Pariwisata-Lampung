@@ -30,6 +30,14 @@ class CreatePlacesTable extends Migration
                 'type' => 'VARCHAR',
                 'constraint' => '255',
             ],
+            'latitude' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '10,8',
+            ],
+            'longitude' => [
+                'type'       => 'DECIMAL',
+                'constraint' => '11,8',
+            ],
             'created_at' => [
                 'type' => 'TIMESTAMP',
                 'null' => true,

@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit Tempat Wisata</title>
-    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/style-form-place.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/style-admin.css') ?>">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
+    <?php include(APPPATH . 'Views/templates/sidebar.php'); ?>
     <div class="form-container">
         <h2>Edit Tempat Wisata</h2>
         <?php if (isset($validation)): ?>
@@ -42,5 +45,8 @@
             <button type="submit" class="btn">Update</button>
         </form>
     </div>
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
