@@ -14,7 +14,7 @@
         <!-- <a href="<?= site_url('admin/addPlace') ?>" class="btn">Tambah Tempat Wisata</a> -->
         <?php if (empty($places)): ?>
             <div class="no-places">
-                <img src="<?= base_url('images/nothing_places.png') ?>" alt="No Places">
+                <img src="<?= base_url('images/nothing-places.jpg') ?>" alt="No Places">
                 <p>No places found.</p>
             </div>
         <?php else: ?>

@@ -36,12 +36,12 @@
         </div>
     </section>
 
-    <section id="tourist-places" class="tourist-places py-20 bg-blue-50">
+    <section id="tourist-places" class="tourist-places py-20 ">
         <div class="max-w-6xl mx-auto text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-12">List Place</h2>
             <?php if (empty($places)): ?>
                 <div class="no-places">
-                    <img src="<?= base_url('images/nothing_places.png') ?>" alt="No Places" class="mx-auto mb-4">
+                    <img src="<?= base_url('images/nothing-places.jpg') ?>" alt="No Places" class="mx-auto mb-4">
                     <p>No places found.</p>
                 </div>
             <?php else: ?>

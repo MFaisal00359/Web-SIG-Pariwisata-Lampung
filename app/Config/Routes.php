@@ -10,6 +10,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'HomeController::index');
 $routes->get('place_detail/(:num)', 'HomeController::placeDetail/$1');
 $routes->get('explore_place', 'HomeController::explorePlace');
+$routes->get('explore_place_detail', 'index::explorePlace');
 
 $routes->get('admin', 'AdminController::login');
 $routes->post('admin/loginAuth', 'AdminController::loginAuth');
