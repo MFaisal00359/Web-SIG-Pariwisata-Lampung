@@ -41,6 +41,7 @@
             </div>
         <?php else: ?>
             <div class="place-container">
+<<<<<<< HEAD
                 <?php foreach ($places as $place) : ?>
                     <div class="place-card">
                         <img src="<?= base_url('uploads/' . $place['photo']) ?>" alt="<?= $place['name'] ?>">
@@ -51,6 +52,43 @@
             </div>
             <div class="pagination">
                 <?= $pager->links() ?>
+=======
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 1">
+                    <h3>Tourist Place 1</h3>
+                    <p>Description of Tourist Place 1</p>
+                </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 2">
+                    <h3>Tourist Place 2</h3>
+                    <p>Description of Tourist Place 2</p>
+                </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 3">
+                    <h3>Tourist Place 3</h3>
+                    <p>Description of Tourist Place 3</p>
+                </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 4">
+                    <h3>Tourist Place 4</h3>
+                    <p>Description of Tourist Place 4</p>
+                </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 5">
+                    <h3>Tourist Place 5</h3>
+                    <p>Description of Tourist Place 5</p>
+                </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 6">
+                    <h3>Tourist Place 6</h3>
+                    <p>Description of Tourist Place 6</p>
+                </a>
+                <a href="<?= site_url('place_detail'); ?>" class="place-card">
+                    <img src="https://via.placeholder.com/300" alt="Tourist Place 6">
+                    <h3>Tourist Place 6</h3>
+                    <p>Description of Tourist Place 6</p>
+                </a>
+>>>>>>> d06b72390c11bca5d42eb9ba94aa338c5d4cc141
             </div>
         <?php endif; ?>
     </section>
