@@ -43,7 +43,7 @@
             <button type="submit" class="btn">Simpan</button>
         </form>
     </div>
-    <script>
+    <script> 
         feather.replace();
     </script>
 </body>

@@ -26,7 +26,7 @@
                     <th>Foto</th>
                     <th>Koordinat</th>
                     <th>Aksi</th>
-                </tr>
+                </tr> 
                 <?php foreach ($places as $place) : ?>
                     <tr>
                         <td><?= $place['name'] ?></td>
