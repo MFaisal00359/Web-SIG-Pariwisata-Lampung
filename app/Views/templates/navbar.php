@@ -2,7 +2,7 @@
     <nav id="navbar">
         <div class="logo-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Lampung_coa.png" alt="Logo-Lampung" class="logo" width="35">
-            <h1><span>Geo</span>Wisata <br />Lampung</h1>
+            <h1><span>GIS</span> Wisata<br />Lampung</h1>
         </div>
         <ul>
             <li><a href="<?= base_url('/') ?>">Home</a></li>

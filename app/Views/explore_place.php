@@ -119,7 +119,7 @@
         .card-popup {
             position: absolute;
             top: 20%;
-            left: 10px;
+            left: 20px;
             width: 300px;
             background: white;
             border-radius: 10px;
@@ -232,7 +232,7 @@
 
                 listItem.addEventListener('click', function() {
                     searchInput.value = place.name;
-                    map.setView([place.latitude, place.longitude], 14);
+                    map.setView([place.latitude, place.longitude], 9);
                     openPopup(place);
                     autocompleteList.innerHTML = '';
                 });
