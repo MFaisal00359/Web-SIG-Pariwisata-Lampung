@@ -10,7 +10,8 @@
     <body class="bg-gray-100">
         <?php include(APPPATH . 'Views/templates/sidebar.php'); ?>
         <div class="dashboard-container p-6">
-            <h1 class="text-3xl font-bold mb-6">Welcome, <?= session()->get('username') ?></h1>
+            <h1 class="text-3xl font-bold mb-6">Welcome, Admin</h1>
+            <hr class="my-4"/>
             <h2 class="text-2xl font-semibold mb-4">Tempat Wisata</h2>
             <?php if (empty($places)): ?>
                 <div class="no-places text-center">
