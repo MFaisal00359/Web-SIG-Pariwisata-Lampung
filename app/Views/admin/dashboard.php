@@ -9,13 +9,14 @@
 <body>
     <?php include(APPPATH . 'Views/templates/sidebar.php'); ?>
     <div class="dashboard-container">
+        <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Lampung_coa.png" alt="Logo-Lampung" class="logo"> -->
         <h1>Welcome, <?= session()->get('username') ?></h1>
         <h2>Tempat Wisata</h2>
         <!-- <a href="<?= site_url('admin/addPlace') ?>" class="btn">Tambah Tempat Wisata</a> -->
         <?php if (empty($places)): ?>
             <div class="no-places">
-                <img src="<?= base_url('images/nothing-places.jpg') ?>" alt="No Places">
-                <p>No places found.</p>
+                <img src="<?= base_url('images/bg-not-found.png') ?>" alt="No Places">
+                <p>No places now</p>
             </div>
         <?php else: ?>
             <table>

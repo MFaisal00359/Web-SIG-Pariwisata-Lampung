@@ -1,4 +1,5 @@
 <div class="sidebar">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Lampung_coa.png" alt="Logo-Lampung" class="logo" width="100" style="margin: 40px 0;">
     <a class="icons" href="<?= site_url('admin/dashboard') ?>">
         <i data-feather="home"></i>
         Dashboard

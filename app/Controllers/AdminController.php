@@ -155,8 +155,26 @@ class AdminController extends BaseController
 
     public function deletePlace($id)
     {
+        $session = session();
+        if (!$session->get('logged_in')) {
+            return redirect()->to('/admin');
+        }
+
         $model = new PlaceModel();
-        $model->delete($id);
+        $place = $model->find($id);
+
+        if ($place) {
+            // Hapus file gambar
+            $photoPath = ROOTPATH . 'public/uploads/' . $place['photo'];
+            if (file_exists($photoPath)) {
+                unlink($photoPath);
+            }
+
+            // Hapus data dari database
+            $model->delete($id);
+        }
+
         return redirect()->to('/admin/dashboard');
     }
+
 }

@@ -28,27 +28,27 @@
             transform: translateX(-50%);
             display: flex;
             align-items: center;
-            width: 300px;
+            width: wrap;
             z-index: 1000;
-            background-color: rgba(255, 255, 255);
+            border: none;
+            background-color: #fff;
             border-radius: 500px;
             padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         #search-container input[type="text"] {
             flex-grow: 1;
             border: none;
             outline: none;
-            padding: 8px;
-            border-radius: 20px;
+            padding: 10px;
+            border-radius: 50px;
             margin-right: 10px;
         }
         #search-container button {
             background-color: #ff9900;
             color: #fff;
             border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
+            padding: 10px 22px;
+            border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -65,7 +65,6 @@
             background-color: rgba(255, 255, 255, 0.8);
             padding: 10px;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             z-index: 1000;
         }
         .legend h4 {
@@ -82,19 +81,21 @@
         }
         .autocomplete-list {
             position: absolute;
-            top: 100%;
+            top: 110%;
             left: 0;
             right: 0;
             background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            scroll-behavior: smooth;
             max-height: 200px;
             overflow-y: auto;
             z-index: 1000;
         }
+        .autocomplete-list::-webkit-scrollbar{
+            width: 2px;
+        }
         .autocomplete-list li {
-            padding: 10px;
+            padding: 20px;
             cursor: pointer;
         }
         .autocomplete-list li:hover {
@@ -102,18 +103,60 @@
         }
         .back-button {
             position: absolute;
-            top: 20px;
+            top: 25px;
             right: 20px;
             background-color: #3490dc;
             color: #fff;
             padding: 10px 20px;
-            border-radius: 20px;
+            border-radius: 500px;
             cursor: pointer;
             transition: background-color 0.3s;
             z-index: 1000;
         }
         .back-button:hover {
             background-color: #2779bd;
+        }
+        .card-popup {
+            position: absolute;
+            top: 20%;
+            left: 10px;
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            display: none;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card-popup.active {
+            display: block;
+            transform: translateX(0);
+        }
+        .card-popup img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .card-popup-content {
+            padding: 15px;
+        }
+        .card-popup-content h3 {
+            margin: 0;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+        .card-popup-content p {
+            margin: 1rem 0;
+        }
+        .card-popup-content .btn {
+            margin-top: 10px;
+        }
+        .card-popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: #ff9900;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -127,7 +170,17 @@
 
     <div id="map"></div>
 
-    <button onclick="window.location.href='<?= site_url('/'); ?>'" class="back-button">Back to Welcome Page</button>
+    <div id="card-popup" class="card-popup">
+        <div class="card-popup-close" onclick="closePopup()">✖</div>
+        <img id="card-popup-img" src="" alt="Place Image">
+        <div class="card-popup-content">
+            <h3 id="card-popup-name">Place Name</h3>
+            <p id="card-popup-location">Location</p>
+            <a id="card-popup-link" href="#" class="btn bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-600">Detail</a>
+        </div>
+    </div>
+
+    <button onclick="window.location.href='<?= site_url('/'); ?>'" class="back-button">Back</button>
 
     <script src="<?= base_url('leaflet/leaflet.js') ?>"></script>
     <script>
@@ -141,7 +194,11 @@
         var places = <?= json_encode($places) ?>;
 
         places.forEach(function(place) {
-            L.marker([place.latitude, place.longitude]).addTo(map).bindPopup(`<b>${place.name}</b><br>${place.location}<br>${place.description}`);
+            var marker = L.marker([place.latitude, place.longitude]).addTo(map).bindPopup(`<b>${place.name}</b><br>${place.location}<br>${place.description}`);
+            
+            marker.on('click', function() {
+                openPopup(place);
+            });
         });
 
         document.getElementById('search-button').addEventListener('click', function() {
@@ -151,6 +208,7 @@
             });
             if (foundPlace) {
                 map.setView([foundPlace.latitude, foundPlace.longitude], 14);
+                openPopup(foundPlace);
             } else {
                 alert('Place not found!');
             }
@@ -175,6 +233,7 @@
                 listItem.addEventListener('click', function() {
                     searchInput.value = place.name;
                     map.setView([place.latitude, place.longitude], 14);
+                    openPopup(place);
                     autocompleteList.innerHTML = '';
                 });
 
@@ -182,12 +241,23 @@
             });
         });
 
-        // Hide autocomplete list when clicking outside
         document.addEventListener('click', function(event) {
             if (!searchInput.contains(event.target) && !autocompleteList.contains(event.target)) {
                 autocompleteList.innerHTML = '';
             }
         });
+
+        function openPopup(place) {
+            document.getElementById('card-popup-img').src = '<?= base_url('uploads/') ?>/' + place.photo;
+            document.getElementById('card-popup-name').textContent = place.name;
+            document.getElementById('card-popup-location').textContent = place.location;
+            document.getElementById('card-popup-link').href = '<?= site_url('place_detail/') ?>/' + place.id;
+            document.getElementById('card-popup').classList.add('active');
+        }
+
+        function closePopup() {
+            document.getElementById('card-popup').classList.remove('active');
+        }
     </script>
 </body>
 </html>

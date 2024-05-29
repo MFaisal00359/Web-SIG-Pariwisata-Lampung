@@ -6,32 +6,49 @@
     <title><?= $place['name'] ?> - Place Detail</title>
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/nav.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('leaflet/leaflet.css') ?>">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-    <?php include(APPPATH . 'Views/templates/header.php'); ?>
+<body class="bg-gray-100 font-sans">
+    <?php include(APPPATH . 'Views/templates/navbar.php'); ?>
 
-    <div class="breadcrumb">
-        <a href="<?= base_url('/') ?>">Home</a> /
-        <span><?= $place['name'] ?></span>
+    <div class="max-w-5xl mx-auto bg-white py-3 px-5 shadow-md mt-6 rounded-md">
+        <a href="<?= base_url('/') ?>" class="text-blue-500 hover:underline">Home</a> /
+        <span class="text-gray-700"><?= $place['name'] ?></span>
     </div>
 
-    <section id="place-detail" class="place-detail">
-        <div class="place-info">
-            <h2><?= $place['name'] ?></h2>
-            <div class="place-image">
-                <img src="<?= base_url('uploads/' . $place['photo']) ?>" alt="<?= $place['name'] ?>">
-            </div>
-            <div class="place-details">
-                <p><strong>Lokasi:</strong> <?= $place['location'] ?></p>
-                <p><strong>Koordinat:</strong> <?= $place['latitude'] ?>, <?= $place['longitude'] ?></p>
-                <p><strong>Deskripsi:</strong></p>
-                <p><?= $place['description'] ?></p>
+    <section id="place-detail" class="place-detail py-6">
+        <div class="max-w-5xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
+            <div class="place-info p-6">
+                <h2 class="text-4xl font-bold mb-6"><?= $place['name'] ?></h2>
+                <div class="place-image mb-6">
+                    <img class="w-full rounded-lg shadow-lg" src="<?= base_url('uploads/' . $place['photo']) ?>" alt="<?= $place['name'] ?>">
+                </div>
+                <div class="place-details space-y-4">
+                    <p class="mb-2 text-lg"><strong class="font-semibold">Lokasi:</strong> <?= $place['location'] ?></p>
+                    <p class="mb-2 text-lg"><strong class="font-semibold">Koordinat:</strong> <?= $place['latitude'] ?>, <?= $place['longitude'] ?></p>
+                    <p class="mb-4 text-lg"><strong class="font-semibold">Deskripsi:</strong></p>
+                    <p class="text-gray-700 mb-4"><?= $place['description'] ?></p>
+                    <div id="map" class="w-full h-64 rounded-lg shadow-md"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <?php include(APPPATH . 'Views/templates/footer.php'); ?>
 
+    <script src="<?= base_url('leaflet/leaflet.js') ?>"></script>
     <script src="<?= base_url('js/script.js') ?>"></script>
+    <script>
+        // Initialize Leaflet map
+        var map = L.map('map').setView([<?= $place['latitude'] ?>, <?= $place['longitude'] ?>], 13);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([<?= $place['latitude'] ?>, <?= $place['longitude'] ?>]).addTo(map)
+            .bindPopup('<b><?= $place['name'] ?></b><br><?= $place['location'] ?>').openPopup();
+    </script>
 </body>
 </html>
