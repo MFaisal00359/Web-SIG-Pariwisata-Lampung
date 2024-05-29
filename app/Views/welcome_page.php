@@ -47,12 +47,12 @@
             <?php if (empty($places)): ?>
                 <div class="no-places">
                     <img src="<?= base_url('images/bg-not-found.png') ?>" alt="No Places" class="mx-auto mb-4">
-                    <p class="text-white">No places found.</p>
+                    <p class="text-black">No places found.</p>
                 </div>
             <?php else: ?>
                 <div class="place-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
                     <?php foreach ($places as $place) : ?>
-                        <div class="place-card relative bg-white bg-opacity-90 rounded-lg shadow-lg overflow-hidden transition duration-300 transform hover:scale-105 hover:shadow-2xl">
+                        <div class="place-card relative bg-white bg-opacity-90 rounded-lg overflow-hidden transition duration-300 transform hover:scale-105 hover:shadow-2xl">
                             <div class="place-card-content absolute inset-0 bg-black bg-opacity-50 text-white p-6 flex flex-col items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
                                 <h3 class="text-xl font-semibold mb-4"><?= $place['name'] ?></h3>
                                 <a href="<?= site_url('place_detail/' . $place['id']) ?>" class="btn bg-yellow-500 text-white py-2 px-4 rounded-full hover:bg-yellow-600 transition duration-300 ease-in-out">Place Details</a>

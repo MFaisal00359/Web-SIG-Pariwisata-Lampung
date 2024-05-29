@@ -172,12 +172,6 @@ body {
 
 /* Tourist Places Section */
 
-.no-places img {
-    width: 300px;
-    height: 300px;
-    margin-bottom: 20px;
-}
-
 .pagination {
     display: flex;
     justify-content: center;
