@@ -9,7 +9,7 @@
             <li><a href="<?= base_url('#about-lampung') ?>">Lampung</a></li>
             <li><a href="<?= base_url('#tourist-places') ?>">Places</a></li>
             <li><a href="<?= site_url('explore_place'); ?>">Maps</a></li>
-            <li><a href="<?= base_url('admin') ?>">Login</a></li>
+            <!-- <li><a href="<?= base_url('admin') ?>">Admin Login</a></li> -->
         </ul>
     </nav>
 </header>
