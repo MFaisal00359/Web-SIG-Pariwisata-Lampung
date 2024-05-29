@@ -15,8 +15,8 @@
 
     <section id="explore" class="banner relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1716668595976-604426108db1?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
         <div class="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4">WELCOME TO GEOWISATA LAMPUNG</h1>
-            <p class="text-lg mb-8">Discover the beauty of Lampung's geological wonders</p>
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">WELCOME TO GIS WISATA LAMPUNG</h1>
+            <p class="text-lg mb-8">Discover the beauty of Lampung's Place's tourist wonders</p>
             <a href="<?= site_url('explore_place'); ?>" class="btn bg-yellow-500 text-white py-3 px-6 text-xl rounded-full hover:bg-yellow-600 transition duration-300 ease-in-out">Explore Now</a>
         </div>
         <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
@@ -47,7 +47,7 @@
             <?php if (empty($places)): ?>
                 <div class="no-places">
                     <img src="<?= base_url('images/bg-not-found.png') ?>" alt="No Places" class="mx-auto mb-4">
-                    <p class="text-white">No places found.</p>
+                    <p class="text-black">No places found.</p>
                 </div>
             <?php else: ?>
                 <div class="place-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center">
@@ -99,7 +99,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-between items-center">
                 <div class="text-center md:text-left">
-                    <h3 class="text-lg font-bold">GeoWisata Lampung</h3>
+                    <h3 class="text-lg font-bold">GIS Wisata Lampung</h3>
                     <p class="text-sm mt-2">Menjelajahi keindahan wisata Lampung</p>
                 </div>
                 <div class="mt-4 md:mt-0 text-center">
