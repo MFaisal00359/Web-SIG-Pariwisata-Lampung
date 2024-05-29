@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoWisata Lampung</title>
+    <title>GIS Wisata Lampung</title>
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
     <link rel="stylesheet" href="<?= base_url('css/nav.css') ?>">
     <link rel="stylesheet" href="<?= base_url('leaflet/leaflet.css') ?>">
@@ -90,7 +90,7 @@
 
     <section id="maps" class="maps py-40 bg-gray-100">
         <div class="max-w-3xl mx-auto text-center px-12 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold mb-12">Maps</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-16">Maps</h2>
             <div id="map" class="map h-80 w-full rounded-lg shadow-md"></div>
         </div>
     </section>
@@ -127,11 +127,22 @@
         });
 
         // Leaflet map
-        var map = L.map('map').setView([-5.45, 105.26], 8); // Koordinat Lampung
+        var map = L.map('map').setView([-4.9180, 105.1997], 8); // zoom 8
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
+
+        // Informasi marker
+        var places = <?= json_encode($places) ?>;
+
+        places.forEach(function(place) {
+            var marker = L.marker([place.latitude, place.longitude]).addTo(map).bindPopup(`<b>${place.name}</b><br>${place.location}<br>${place.description}`);
+            
+            marker.on('click', function() {
+                openPopup(place);
+            });
+        });
     </script>
 </body>
 </html>

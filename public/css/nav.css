@@ -49,7 +49,6 @@ nav.scroll {
     width: 100%;
     height: 74px;
     background-color: rgb(255, 255, 255);
-    backdrop-filter: blur(10px);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     padding: 32px;
     z-index: 1000;
