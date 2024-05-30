@@ -133,10 +133,16 @@ class AdminController extends BaseController
         }
 
         $model = new PlaceModel();
+        $place = $model->find($id);
+
         $photo = $this->request->getFile('photo');
         if ($photo && $photo->isValid() && !$photo->hasMoved()) {
             $photoName = $photo->getRandomName();
             $photo->move(ROOTPATH . 'public/uploads', $photoName); 
+            // Hapus foto lama
+            if ($place['photo'] && file_exists(ROOTPATH . 'public/uploads/' . $place['photo'])) {
+                unlink(ROOTPATH . 'public/uploads/' . $place['photo']);
+            }
         } else {
             $photoName = $this->request->getPost('old_photo');
         }
@@ -164,17 +170,13 @@ class AdminController extends BaseController
         $place = $model->find($id);
 
         if ($place) {
-            // Hapus file gambar
             $photoPath = ROOTPATH . 'public/uploads/' . $place['photo'];
             if (file_exists($photoPath)) {
                 unlink($photoPath);
             }
-
-            // Hapus data dari database
             $model->delete($id);
         }
 
         return redirect()->to('/admin/dashboard');
     }
-
 }
