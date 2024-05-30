@@ -41,4 +41,4 @@ jalankan localhost webnya
 php spark serve
 ```
 
-jangan lupa start hehe, terimakasih 🙏
+jangan lupa star nya hehe, terimakasih 🙏
