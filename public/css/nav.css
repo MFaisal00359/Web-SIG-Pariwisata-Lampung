@@ -17,7 +17,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: 10000 !important;
-    transition: padding 0.3s;
+    transition: padding 0.4 s;
 }
 
 .logo-container {
@@ -58,7 +58,7 @@ nav.scroll {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     padding: 32px;
     z-index: 1000;
-    transition: padding 0.5s;
+    transition: padding 0.7s;
 }
 
 nav ul {

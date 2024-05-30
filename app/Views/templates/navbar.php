@@ -15,15 +15,15 @@
             </div>
             
             <ul id="navbar-menu" class="hidden md:flex space-x-4 text-center align-middle">
-                <li class="p-1 rounded-full"><a href="<?= base_url('/') ?>" class="hover:text-yellow-400 ">Home</a></li>
-                <li class="p-1 rounded-full"><a href="<?= base_url('#about-lampung') ?>" class="hover:text-yellow-400 ">Lampung</a></li>
-                <li class="p-1 rounded-full"><a href="<?= base_url('#tourist-places') ?>" class="hover:text-yellow-400 ">Places</a></li>
-                <li class="p-1 rounded-full"><a href="<?= site_url('explore_place'); ?>" class="hover:text-yellow-400 ">Maps</a></li>
+                <li class="p-1 rounded-full"><a href="<?= base_url('/') ?>" class="text-white hover:text-yellow-400">Home</a></li>
+                <li class="p-1 rounded-full"><a href="<?= base_url('#about-lampung') ?>" class="text-white hover:text-yellow-400 ">Lampung</a></li>
+                <li class="p-1 rounded-full"><a href="<?= base_url('#tourist-places') ?>" class="text-white hover:text-yellow-400 ">Places</a></li>
+                <li class="p-1 rounded-full"><a href="<?= site_url('explore_place'); ?>" class="text-white hover:text-yellow-400 ">Maps</a></li>
                 <!-- <li class="hover:bg-yellow-400 p-1 rounded-full"><a href="<?= base_url('admin') ?>" class="hover:text-black">Admin Login</a></li> -->
             </ul>
         </div>
         
-        <div id="navbar-menu-mobile" class="hidden md:hidden bg-gray-800 text-white flex flex-col items-center space-y-2 mt-4 p-4 rounded-lg shadow-lg">
+        <div id="navbar-menu-mobile" class="hidden md:hidden bg-gray-800 text-white flex flex-col items-center space-y-2 mt-4 p-4 rounded-lg shadow-lg  absolute w-full left-0 top-20 md:top-0">
             <a href="<?= base_url('/') ?>" class="block py-2 px-4 w-full text-center hover:bg-gray-700 rounded">Home</a>
             <a href="<?= base_url('#about-lampung') ?>" class="block py-2 px-4 w-full text-center hover:bg-gray-700 rounded">Lampung</a>
             <a href="<?= base_url('#tourist-places') ?>" class="block py-2 px-4 w-full text-center hover:bg-gray-700 rounded">Places</a>

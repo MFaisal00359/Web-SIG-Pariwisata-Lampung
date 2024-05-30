@@ -15,8 +15,8 @@
 
     <section id="explore" class="explore py-40 relative h-screen bg-cover bg-center text-center" style="background-image: url('https://images.unsplash.com/photo-1716668595976-604426108db1?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
         <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
-        <div class="explore-content relative z-10 flex flex-col items-center justify-center h-full text-white">
-            <h1 class="text-6xl md:text-7xl font-black tracking-tight leading-tight mb-8">WELCOME TO GIS <br>WISATA LAMPUNG</h1>
+        <div class="explore-content top-20 relative z-10 flex flex-col items-center justify-center h-full text-white">
+            <h1 class="text-4xl md:text-7xl font-black tracking-tight leading-tight mb-4">WELCOME TO GIS <br>WISATA LAMPUNG</h1>
             <p class="text-lg mb-8">Discover the beauty of Lampung's Place's tourist wonders</p>
             <a href="<?= site_url('explore_place'); ?>" class="btn bg-yellow-500 text-white py-3 px-6 text-xl rounded-full hover:bg-yellow-600 transition duration-300 ease-in-out">Explore Now</a>
         </div>
