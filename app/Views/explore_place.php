@@ -194,7 +194,7 @@
         var places = <?= json_encode($places) ?>;
 
         places.forEach(function(place) {
-            var marker = L.marker([place.latitude, place.longitude]).addTo(map).bindPopup(`<b>${place.name}</b><br>${place.location}<br>${place.description}`);
+            var marker = L.marker([place.latitude, place.longitude]).addTo(map).bindPopup(`<b>${place.name}</b><hr/>${place.location}<br>${place.latitude}, ${place.longitude}`);
             
             marker.on('click', function() {
                 openPopup(place);

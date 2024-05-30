@@ -43,7 +43,6 @@
     <script src="<?= base_url('leaflet/leaflet.js') ?>"></script>
     <script src="<?= base_url('js/script.js') ?>"></script>
     <script>
-        // Initialize Leaflet map
         var map = L.map('map').setView([<?= $place['latitude'] ?>, <?= $place['longitude'] ?>], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
