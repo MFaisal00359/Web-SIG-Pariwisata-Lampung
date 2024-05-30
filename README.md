@@ -1,7 +1,9 @@
 # GIS-Wisata-Lampung
-## website sistem informasi geografis pariwisata di provinsi lampung
+
+website sistem informasi geografis pariwisata di provinsi lampung
 
 ## Tutorial menjalankan proyek
+
 download composer kalo belum ada: 🔗https://getcomposer.org/download/ 
 
 jangan lupa untuk set environment variable
@@ -11,7 +13,7 @@ install composer
 ```
 
 ```
-composer Update
+composer update
 ```
 atau
 ```
@@ -41,4 +43,4 @@ jalankan localhost webnya
 php spark serve
 ```
 
-jangan lupa star nya hehe, terimakasih 🙏
+<center><i>jangan lupa star nya hehe, terimakasih 🙏</i></center>
