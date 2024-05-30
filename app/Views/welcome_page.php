@@ -13,13 +13,13 @@
 <body class="bg-white font-sans">
     <?php include(APPPATH . 'Views/templates/navbar.php'); ?>
 
-    <section id="explore" class="banner py-40 relative h-screen bg-cover bg-center text-center" style="background-image: url('https://images.unsplash.com/photo-1716668595976-604426108db1?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
-        <div class="banner-content absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white z-10">
-            <h1 class="text-6xl md:text-7xl font-black tracking-tight leading-1 mb-8">WELCOME TO GIS WISATA LAMPUNG</h1>
+    <section id="explore" class="explore py-40 relative h-screen bg-cover bg-center text-center" style="background-image: url('https://images.unsplash.com/photo-1716668595976-604426108db1?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
+        <div class="explore-content relative z-10 flex flex-col items-center justify-center h-full text-white">
+            <h1 class="text-6xl md:text-7xl font-black tracking-tight leading-tight mb-8">WELCOME TO GIS <br>WISATA LAMPUNG</h1>
             <p class="text-lg mb-8">Discover the beauty of Lampung's Place's tourist wonders</p>
             <a href="<?= site_url('explore_place'); ?>" class="btn bg-yellow-500 text-white py-3 px-6 text-xl rounded-full hover:bg-yellow-600 transition duration-300 ease-in-out">Explore Now</a>
         </div>
-        <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50"></div>
     </section>
 
     <section id="about-lampung" class="about-lampung py-40 bg-gray-100">
@@ -95,23 +95,7 @@
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-wrap justify-between items-center">
-                <div class="text-center md:text-left">
-                    <h3 class="text-lg font-bold">GIS Wisata Lampung</h3>
-                    <p class="text-sm mt-2">Menjelajahi keindahan wisata Lampung</p>
-                </div>
-                <div class="mt-4 md:mt-0 text-center">
-                    <p class="text-sm">Made with <span class="text-orange-500">🧡</span> by Kelompok 6 SIG</p>
-                </div>
-                <div class="mt-4 md:mt-0 text-center">
-                    <a href="https://itera.ac.id" class="text-orange-500 hover:underline mx-2">Website ITERA</a>
-                    <a href="https://www.instagram.com/iteraofficial/" class="text-orange-500 hover:underline mx-2">Instagram ITERA</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include(APPPATH . 'Views/templates/footer.php'); ?>
 
     <script src="<?= base_url('leaflet/leaflet.js') ?>"></script>    
     <script src="<?= base_url('js/MapsPrewiewLanding.js') ?>"></script>
@@ -119,7 +103,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         // ScrollReveal
-        ScrollReveal().reveal('.banner-content, .about-lampung-content, .tourist-places-cards, .map, .sdgs-cards', {
+        ScrollReveal().reveal('.explore-content, .about-lampung-content, .tourist-places-cards, .map, .sdgs-cards', {
             duration: 1000,
             origin: 'bottom',
             distance: '50px',

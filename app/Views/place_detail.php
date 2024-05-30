@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="<?= base_url('leaflet/leaflet.css') ?>">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-gray-800 font-sans">
     <?php include(APPPATH . 'Views/templates/navbar.php'); ?>
 
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto py-28 px-4 sm:px-6 lg:px-8">
         <div class="py-3 px-5 mb-5">
-            <a href="<?= base_url('/') ?>" class="text-blue-500 hover:underline">Home</a> /
-            <span class="text-gray-700"><?= $place['name'] ?></span>
+            <a href="<?= base_url('/') ?>" class="text-blue-500 hover:underline">Home</a>
+            <span class="text-gray-500"> / </span>
+            <span class="text-gray-300"><?= $place['name'] ?></span>
         </div>
 
         <section id="place-detail" class="place-detail">

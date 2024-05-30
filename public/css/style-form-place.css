@@ -51,21 +51,6 @@ h2 {
     color: #555;
 }
 
-.form-group input[type="text"],
-.form-group input[type="file"],
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
 .btn {
     display: block;
     width: 100%;
@@ -84,9 +69,6 @@ h2 {
     background-color: #218838;
 }
 
-.form-group input[type="file"] {
-    padding: 3px;
-}
 
 @media (max-width: 768px) {
     .form-container {

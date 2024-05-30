@@ -155,7 +155,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            color: #ff9900;
+            color: white;
             cursor: pointer;
         }
     </style>
