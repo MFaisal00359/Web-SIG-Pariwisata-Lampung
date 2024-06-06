@@ -42,5 +42,3 @@ jalankan localhost webnya
 ```
 php spark serve
 ```
-
-<center><i>jangan lupa star nya hehe, terimakasih 🙏</i></center>
